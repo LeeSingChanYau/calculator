@@ -166,8 +166,12 @@ function App() {
           </div>
         </div>
         <div className="numbers">
-          <div className="zero">0</div>
-          <div className="number">.</div>
+          <div className="zero" onClick={() => handleInput('0')}>
+            0
+          </div>
+          <div className="number" onClick={() => handleInput('.')}>
+            .
+          </div>
           <div className="operator" onClick={handleEqual}>
             =
           </div>
