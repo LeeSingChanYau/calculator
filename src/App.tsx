@@ -34,6 +34,48 @@ function App() {
     }
   };
 
+  const handleSubtract = () => {
+    setOperatorClicked(true);
+    if (currentValue > 0) {
+      console.log('inside handleSum if');
+      let sum = currentValue - Number(inputValue);
+      setOutputValue(String(sum));
+      setInputValue('0');
+      setValue(sum);
+    } else {
+      console.log('inside handleSum else');
+      setValue(Number(inputValue));
+    }
+  };
+
+  const handleMultiplication = () => {
+    setOperatorClicked(true);
+    if (currentValue > 0) {
+      console.log('inside handleSum if');
+      let sum = currentValue * Number(inputValue);
+      setOutputValue(String(sum));
+      setInputValue('0');
+      setValue(sum);
+    } else {
+      console.log('inside handleSum else');
+      setValue(Number(inputValue));
+    }
+  };
+
+  const handleDivision = () => {
+    setOperatorClicked(true);
+    if (currentValue > 0) {
+      console.log('inside handleSum if');
+      let sum = currentValue / Number(inputValue);
+      setOutputValue(String(sum));
+      setInputValue('0');
+      setValue(sum);
+    } else {
+      console.log('inside handleSum else');
+      setValue(Number(inputValue));
+    }
+  };
+
   return (
     <div className="app">
       <div className="calculator">
@@ -42,7 +84,9 @@ function App() {
           <div className="number">AC</div>
           <div className="number">+/-</div>
           <div className="number">%</div>
-          <div className="number">/</div>
+          <div className="number" onClick={handleDivision}>
+            /
+          </div>
         </div>
         <div className="numbers">
           <div className="number" onClick={() => handleInput('7')}>
@@ -54,7 +98,9 @@ function App() {
           <div className="number" onClick={() => handleInput('9')}>
             9
           </div>
-          <div className="number">X</div>
+          <div className="number" onClick={handleMultiplication}>
+            X
+          </div>
         </div>
         <div className="numbers">
           <div className="number" onClick={() => handleInput('4')}>
@@ -66,7 +112,9 @@ function App() {
           <div className="number" onClick={() => handleInput('6')}>
             6
           </div>
-          <div className="number">-</div>
+          <div className="number" onClick={handleSubtract}>
+            -
+          </div>
         </div>
         <div className="numbers">
           <div className="number" onClick={() => handleInput('1')}>
